@@ -1,0 +1,184 @@
+body {
+    font-family: 'heebo';
+    color: $text-color;
+    margin: 0;
+}
+
+nav {
+    position: absolute;
+    right: 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 2rem;
+
+    img {
+        width: 9rem;
+        height: 1.5rem;
+    }
+
+    button {
+        @include btn(8rem, 0.8rem, white);
+        box-shadow: 1px 0px 12px -5px gray;
+    }
+}
+
+header {
+    background-color: $primary-color;
+
+    img {
+        width: 100%;
+    }
+
+    .header-section {
+        background-image: url("images/bg-hero-desktop.svg");
+        margin: auto auto 5rem;
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 6rem;
+        justify-content: center;
+
+        @media (max-width:375px) {
+            background-image: url("images/bg-hero-mobile.svg");
+
+        }
+    }
+
+    .primary-heading {
+
+        font-weight: bold;
+        font-size: 2rem;
+        // font-size: 18px;
+
+        @media (max-width:768px) {
+            font-size: 1rem;
+            // font-size: 18px;
+        }
+
+        @media (max-width:375px) {
+            text-align: center;
+        }
+    }
+
+    .secondary-heading {
+        width: 72%;
+        font-size: 0.9rem;
+        // font-size: 18px;
+        margin-bottom: 2rem;
+
+        @media (max-width:768px) {
+            // font-size: 18px;
+            font-size: 0.7rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width:375px) {
+            text-align: center;
+            margin: 0 auto 2rem;
+        }
+    }
+
+    button {
+
+        // @include btn(12rem, 0.8rem, hsl(322, 100%, 66%), white);
+        @include btn(12rem, 18px, hsl(322, 100%, 66%), white);
+
+        @media (max-width:768px) {
+            display: block;
+            @include btn(6rem, 0.5rem, hsl(322, 100%, 66%), white);
+            height: 1rem;
+        }
+
+        @media (max-width:375px) {
+            display: block;
+            margin: auto auto 2rem;
+        }
+    }
+
+}
+
+// 
+section {
+    .cards {
+        margin: auto;
+    }
+
+    .card1 {
+        @include my-card(wrap-reverse)
+    }
+
+    .card2 {
+        @include my-card(wrap)
+    }
+
+    .card3 {
+        @include my-card(wrap-reverse)
+    }
+}
+
+
+footer {
+    background-color: $footer-color;
+    color: white;
+    padding-top: 3rem;
+    font-size: 0.8rem;
+    // font-size: 18px;
+    position: relative;
+    margin-top: 7rem;
+
+    section {
+
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .build-community-section {
+            @include my-card(wrap);
+            width: 240px;
+            padding: 1rem;
+            position: absolute;
+            top: -4rem;
+            background-color: white;
+
+            p {
+                width: 100%;
+                text-align: center;
+                color: $text-color;
+            }
+
+            button {
+                @include btn(8rem, 0.7rem, hsl(322, 100%, 66%), white);
+                // @include btn(8rem, 18px, hsl(322, 100%, 66%), white);
+                margin: auto
+            }
+        }
+
+
+    }
+
+    .footer-content {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+    }
+
+    .footer-content {
+        display: flex;
+    }
+
+    .div-icon {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+
+        p {
+            margin-top: 0;
+        }
+
+    }
+}

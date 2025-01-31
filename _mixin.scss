@@ -1,0 +1,84 @@
+@mixin createLayout ($noOfCols, $screenName, $breakPoint) {
+    @media (min-width:$breakPoint) {
+        @if $screenName=="" {
+            @for $i from 1 through $noOfCols {
+                .col-#{$i} {
+                    width: ($i/$noOfCols)*100%;
+                }
+            }
+        }
+
+        @else {
+            @for $i from 1 through $noOfCols {
+                .col-#{$screenName}-#{$i} {
+                    width: ($i/$noOfCols)*100%;
+                }
+            }
+        }
+    }
+}
+
+@include createLayout(12, "", 200px);
+@include createLayout(12, "sm", 375px);
+@include createLayout(12, "md", 768px);
+@include createLayout(12, "lg", 992px);
+@include createLayout(12, "xl", 1200px);
+
+//////////////////////////////////////////
+@mixin btn ($width, $font-size, $background-color, $color: black) {
+    width: $width;
+    height: 2rem;
+    border: 0;
+    border-radius: 2rem;
+    background-color: $background-color;
+    font-size: $font-size;
+    color: $color
+}
+
+@mixin my-card($iswrap) {
+    display: flex;
+    align-items: center;
+    flex-wrap: $iswrap;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0px 0px 36px -23px gray;
+    border: 0;
+    border-radius: 0.8rem;
+
+
+    .card-content {
+        padding-inline: 4rem;
+        box-sizing: border-box;
+        margin: auto;
+
+        @media (max-width:375px) {
+            text-align: center;
+            padding-inline: 1rem;
+        }
+
+        @media (max-width:768px) {
+            padding-inline: 0;
+        }
+
+        h3 {
+            @media (max-width:768px) {
+                // font-size: 1rem;
+                font-size: 18px;
+            }
+        }
+
+
+        .card-pharagraph {
+            // font-size: 0.9rem;
+            font-size: 18px;
+            color: $text-color-light;
+
+            @media (max-width:768px) {
+                // font-size: 0.7rem;
+                font-size: 18px;
+            }
+        }
+
+    }
+
+}
